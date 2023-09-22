@@ -81,3 +81,9 @@ export interface Info {
     page: number;
     version?: string;
 }
+
+export interface GetAccountantsParams {
+    page: number;
+    results: number;
+    seed: string;
+}

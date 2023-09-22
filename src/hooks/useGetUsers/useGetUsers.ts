@@ -1,16 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-import { AccountantsData, Result, STATUS } from "./interfaces";
-
-interface GetAccountantsParams {
-    page: number;
-    results: number;
-    seed: string;
-}
+import { AccountantsData, GetAccountantsParams, Result, STATUS } from "./interfaces";
 
 const url = "https://randomuser.me/api";
-const initInfo: GetAccountantsParams = { page: 1, results: 1, seed: "accountants-cards" };
+const initInfo: GetAccountantsParams = { page: 1, results: 4, seed: "accountants-cards" };
 export const useGetAccountants = () => {
     const [accountantsData, setAccountantsData] = useState<AccountantsData>({
         status: STATUS.NOT_LOADED,

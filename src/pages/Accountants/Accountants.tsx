@@ -12,7 +12,7 @@ export const AccountantsPage = () => {
     return (
         <div className="accountants-page">
             <AccountantsCards accountants={accountantsData?.results} />
-            <Button busy={accountantsData.status == STATUS.LOADING} onClick={getMoreAccountants} text="Load more" />
+            <Button busy={accountantsData.status == STATUS.LOADING} onClick={getMoreAccountants} text="Pokaż więcej" />
         </div>
     );
 };
