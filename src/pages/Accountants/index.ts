@@ -1,0 +1,1 @@
+export { AccountantsPage } from "./Accountants";

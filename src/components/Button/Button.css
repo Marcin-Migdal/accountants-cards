@@ -1,0 +1,60 @@
+.load-button {
+    display: flex;
+    align-items: center;
+
+    width: fit-content;
+    border-radius: 8px;
+    padding: 7px 10px;
+    border: none;
+
+    font-weight: 600;
+    font-size: 1.1rem;
+
+    color: #1e88e5;
+    background-color: #e3f2fd;
+
+    overflow: hidden;
+    transition: 0.25s;
+}
+
+.load-button:hover:not(.busy) {
+    color: #edf4fa;
+    background-color: #83c7f7;
+}
+
+.load-button p {
+    position: relative;
+
+    left: 7px;
+    padding: 0;
+    margin: 0;
+}
+
+.load-button.busy p {
+    position: relative;
+
+    left: -3px;
+    padding: 0;
+    margin: 0;
+}
+
+.spinner {
+    position: relative;
+    right: -30px;
+    animation: rotate infinite 3s;
+    transition: 0.25s;
+}
+
+.load-button.busy .spinner {
+    right: -2px;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+    }
+}
