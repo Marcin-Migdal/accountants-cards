@@ -1,0 +1,49 @@
+.custom-button {
+    display: flex;
+    align-items: center;
+
+    min-height: 32px !important;
+    width: fit-content;
+    border-radius: 8px;
+    padding: 7px 10px;
+    border: none;
+
+    font-size: 1.1rem;
+
+    color: #0086df;
+    background-color: #e3f2fd;
+
+    overflow: hidden;
+    transition: 0.25s;
+}
+
+.custom-button:hover:not(.busy) {
+    color: #edf4fa;
+    background-color: #83c7f7;
+}
+
+.custom-button p {
+    position: relative;
+    left: 7px;
+
+    color: inherit;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.custom-button.busy p {
+    position: relative;
+
+    left: -3px;
+    padding: 0;
+    margin: 0;
+}
+
+.custom-button .spinner {
+    position: relative;
+    right: -30px;
+}
+
+.custom-button.busy .spinner {
+    right: -2px;
+}

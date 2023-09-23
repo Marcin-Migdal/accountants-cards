@@ -1,0 +1,25 @@
+.accountants-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+
+    margin-bottom: 75px;
+}
+
+@media (max-width: 1300px) {
+    .accountants-cards {
+        grid-template-columns: repeat(3, 1fr); /* Dwie kolumny dla ekranów o szerokości do 768px */
+    }
+}
+
+@media (max-width: 960px) {
+    .accountants-cards {
+        grid-template-columns: repeat(2, 1fr); /* Dwie kolumny dla ekranów o szerokości do 768px */
+    }
+}
+
+@media (max-width: 630px) {
+    .accountants-cards {
+        grid-template-columns: repeat(1, 1fr); /* Jedna kolumna dla ekranów o szerokości do 480px */
+    }
+}
