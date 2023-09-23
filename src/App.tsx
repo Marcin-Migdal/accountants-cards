@@ -9,9 +9,6 @@ import { AccountantsPage } from "./pages";
 //*Styles
 import "./App.css";
 
-//! TODO Add logo
-//! TODO fix bottom padding for button
-//! TODO changing amount of columns when screen is smaller
 //! TODO cancel token while fetching data
 
 function App() {

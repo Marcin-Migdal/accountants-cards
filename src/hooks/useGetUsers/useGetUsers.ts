@@ -4,17 +4,17 @@ import axios from "axios";
 import { AccountantsData, GetAccountantsParams, Result, STATUS } from "./interfaces";
 
 const url = "https://randomuser.me/api";
-const initInfo: GetAccountantsParams = { page: 1, results: 4, seed: "accountants-cards" };
+const initAccountantsData = {
+    status: STATUS.NOT_LOADED,
+    results: [],
+    info: { page: 1, results: 4, seed: "accountants-cards" },
+};
 export const useGetAccountants = () => {
-    const [accountantsData, setAccountantsData] = useState<AccountantsData>({
-        status: STATUS.NOT_LOADED,
-        results: [],
-        info: initInfo,
-    });
+    const [accountantsData, setAccountantsData] = useState<AccountantsData>(initAccountantsData);
 
     useEffect(() => {
         // fetching initial accountants
-        getUsers(accountantsData.info);
+        getUsers(initAccountantsData.info);
     }, []);
 
     const getUsers = async (payload: GetAccountantsParams) => {

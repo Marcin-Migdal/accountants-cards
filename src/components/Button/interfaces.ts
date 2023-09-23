@@ -5,4 +5,6 @@ export interface ButtonProps {
     onClick: (e: MouseEvent<HTMLButtonElement>) => void;
     disabled?: boolean;
     busy?: boolean;
+    display?: boolean;
+    style?: CSSProperties;
 }

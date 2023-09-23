@@ -39,23 +39,11 @@
     margin: 0;
 }
 
-.spinner {
+.custom-button .spinner {
     position: relative;
     right: -30px;
-    animation: rotate infinite 3s;
-    transition: 0.25s;
 }
 
 .custom-button.busy .spinner {
     right: -2px;
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(359deg);
-    }
 }

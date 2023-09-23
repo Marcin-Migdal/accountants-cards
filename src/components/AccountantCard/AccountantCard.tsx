@@ -17,9 +17,9 @@ export const AccountantCard = ({ accountant }: AccountantCardProps) => {
     return (
         <div className="accountant-card">
             <div className="thumbnail">
-                <img src={accountant.picture.thumbnail} />
+                <img src={accountant.picture.thumbnail} alt="accountant thumbnail" />
                 <div className="name-section">
-                    <label>{accountant.gender == "female" ? "Twoja" : "Twój"} księgowy</label>
+                    <label>{accountant.gender === "female" ? "Twoja" : "Twój"} księgowy</label>
                     <p>{accountant.name.first + " " + accountant.name.last}</p>
                 </div>
             </div>
