@@ -1,5 +1,5 @@
+import axios, { CancelTokenSource } from "axios";
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 import { AccountantsData, GetAccountantsParams, Result, STATUS } from "./interfaces";
 
@@ -13,15 +13,20 @@ export const useGetAccountants = () => {
     const [accountantsData, setAccountantsData] = useState<AccountantsData>(initAccountantsData);
 
     useEffect(() => {
-        // fetching initial accountants
-        getUsers(initAccountantsData.info);
-    }, []);
+        const cancelToken = axios.CancelToken.source();
 
-    const getUsers = async (payload: GetAccountantsParams) => {
+        getUsers(accountantsData.info, cancelToken);
+
+        return () => {
+            cancelToken.cancel("Request canceled");
+        };
+    }, [accountantsData.info.page]);
+
+    const getUsers = async (payload: GetAccountantsParams, cancelToken: CancelTokenSource) => {
         try {
             setAccountantsData((prevState) => ({ ...prevState, status: STATUS.LOADING }));
 
-            const response = await axios.get(url, { params: payload });
+            const response = await axios.get(url, { params: payload, cancelToken: cancelToken.token });
 
             setAccountantsData((prevState) => {
                 const results: Result[] = prevState?.results ? [...prevState?.results, ...response.data.results] : response.data.results;
@@ -29,12 +34,18 @@ export const useGetAccountants = () => {
                 return { results: results, info: response.data.info, status: STATUS.LOADED };
             });
         } catch (error) {
+            if (axios.isCancel(error)) {
+                console.error("Axios error: ", error.message);
+                return;
+            }
+
             setAccountantsData((prevState) => ({ ...prevState, status: STATUS.ERROR }));
         }
     };
 
     // fetching next batch of accountants
-    const getMoreAccountants = () => getUsers({ ...accountantsData.info, page: accountantsData.info.page + 1 });
+    const getMoreAccountants = () =>
+        setAccountantsData((prevState) => ({ ...prevState, info: { ...prevState.info, page: prevState.info.page + 1 } }));
 
     return { accountantsData, setAccountantsData, getMoreAccountants };
 };
