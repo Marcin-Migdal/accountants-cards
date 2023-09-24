@@ -1,1 +1,1 @@
-export { AccountantsPage } from "./Accountants";
+export { Accountants as AccountantsPage } from "./Accountants";

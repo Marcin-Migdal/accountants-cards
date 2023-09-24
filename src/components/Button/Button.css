@@ -29,6 +29,7 @@
     color: inherit;
     font-size: 14px;
     font-weight: 500;
+    transition: 0.25s;
 }
 
 .custom-button.busy p {
@@ -42,6 +43,7 @@
 .custom-button .spinner {
     position: relative;
     right: -30px;
+    transition: 0.25s;
 }
 
 .custom-button.busy .spinner {
