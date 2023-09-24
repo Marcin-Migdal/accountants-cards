@@ -17,14 +17,15 @@ export const useGetAccountants = () => {
         getUsers(initAccountantsData.info);
     }, []);
 
-    const getUsers = async (payload: GetAccountantsParams) => {
+    const getUsers = async (payload: GetAccountantsParams, errorRefresh: boolean = false) => {
         try {
-            setAccountantsData((prevState) => ({ ...prevState, status: STATUS.LOADING }));
+            setAccountantsData((prevState) => ({ ...prevState, status: errorRefresh ? STATUS.LOADING_ON_ERROR : STATUS.LOADING }));
 
             const response = await axios.get(url, { params: payload });
 
             setAccountantsData((prevState) => {
-                const results: Result[] = prevState?.results ? [...prevState?.results, ...response.data.results] : response.data.results;
+                const results: Result[] =
+                    prevState?.results && !errorRefresh ? [...prevState?.results, ...response.data.results] : response.data.results;
 
                 return { results: results, info: response.data.info, status: STATUS.LOADED };
             });
