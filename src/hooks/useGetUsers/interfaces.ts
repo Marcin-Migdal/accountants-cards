@@ -1,8 +1,9 @@
-export type StatusType = "NOT_LOADED" | "LOADING" | "LOADED" | "ERROR";
+export type StatusType = "NOT_LOADED" | "LOADING" | "LOADING_ON_ERROR" | "LOADED" | "ERROR";
 
 export enum STATUS {
     NOT_LOADED = "NOT_LOADED",
     LOADING = "LOADING",
+    LOADING_ON_ERROR = "LOADING_ON_ERROR",
     LOADED = "LOADED",
     ERROR = "ERROR",
 }

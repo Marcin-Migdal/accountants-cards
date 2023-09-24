@@ -7,6 +7,7 @@
     margin: 0 auto;
 
     overflow-x: auto;
+    scroll-behavior: smooth;
 }
 
 .accountants-page .accountants-page-content {

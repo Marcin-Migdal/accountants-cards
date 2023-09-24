@@ -7,18 +7,18 @@
     background-color: rgba(255, 255, 255, 1);
 }
 
-.accountant-card .thumbnail {
+.accountant-card .thumbnail-section {
     display: flex;
 }
 
-.accountant-card .thumbnail img {
+.accountant-card .thumbnail-section img {
     width: 64px;
     height: 64px;
 
     border-radius: 8px;
 }
 
-.accountant-card .thumbnail .name-section {
+.accountant-card .thumbnail-section .name-section {
     width: 100%;
 
     padding-top: 6px;
@@ -27,16 +27,16 @@
     position: relative;
 }
 
-.accountant-card .thumbnail .name-section label {
+.accountant-card .thumbnail-section .name-section label {
     font-size: 16px;
 }
-.accountant-card > label:not(.thumbnail label) {
+.accountant-card > label:not(.thumbnail-section label) {
     display: inline-block;
     margin-top: 24px !important;
     margin-bottom: 6px;
 }
 
-.accountant-card .thumbnail .name-section p {
+.accountant-card .thumbnail-section .name-section p {
     position: absolute;
     bottom: 35px;
     width: 100%;

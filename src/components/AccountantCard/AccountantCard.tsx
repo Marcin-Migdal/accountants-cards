@@ -16,7 +16,7 @@ export const AccountantCard = ({ accountant }: AccountantCardProps) => {
 
     return (
         <div className="accountant-card">
-            <div className="thumbnail">
+            <div className="thumbnail-section">
                 <img src={accountant.picture.thumbnail} alt="accountant thumbnail" />
                 <div className="name-section">
                     <label>{accountant.gender === "female" ? "Twoja" : "Twój"} księgowy</label>
@@ -28,7 +28,7 @@ export const AccountantCard = ({ accountant }: AccountantCardProps) => {
             <label>Telefon</label>
             <p>{accountant.phone}</p>
             <label>Średnia cena netto usługi / m-c</label>
-            <p>350,00 PLN1</p>
+            <p>350,00 PLN</p>
             <Button text="Dowiedź się więcej" onClick={handleShowDetails} />
         </div>
     );
