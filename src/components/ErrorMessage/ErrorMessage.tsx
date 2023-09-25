@@ -6,7 +6,7 @@ import { Button } from "../Button";
 import "./ErrorMessage.css";
 
 export const ErrorMessage = ({ status, getAccountantsOnError }: any) => {
-    if (status != STATUS.ERROR && status != STATUS.LOADING_ON_ERROR) return <></>;
+    if (status !== STATUS.ERROR && status !== STATUS.LOADING_ON_ERROR) return <></>;
 
     return (
         <>
