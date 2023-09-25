@@ -24,11 +24,11 @@ export const AccountantCard = ({ accountant }: AccountantCardProps) => {
                 </div>
             </div>
             <label>E-mail</label>
-            <p style={{ textDecoration: "underline" }}>{accountant.email}</p>
+            <a href={`mailto:${accountant.email}`}>{accountant.email}</a>
             <label>Telefon</label>
             <p>{accountant.phone}</p>
             <label>Średnia cena netto usługi / m-c</label>
-            <p>350,00 PLN</p>
+            <p>{accountant.price}</p>
             <Button text="Dowiedź się więcej" onClick={handleShowDetails} />
         </div>
     );

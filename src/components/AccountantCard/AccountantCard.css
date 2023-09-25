@@ -51,6 +51,11 @@
     width: fit-content;
 }
 
+.accountant-card a {
+    display: block;
+    color: #000;
+}
+
 .accountant-card .custom-button {
     margin-top: 24px;
 }
