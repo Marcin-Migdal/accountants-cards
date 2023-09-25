@@ -5,7 +5,7 @@ import { AccountantsData, GetAccountantsParams, Result, STATUS } from "./interfa
 import { getRandomServicePrice } from "../../helpers/getRandomServicePrice";
 
 const url = "https://randomuser.me/api";
-const initAccountantsData = {
+const initAccountantsData: AccountantsData = {
     status: STATUS.NOT_LOADED,
     results: [],
     info: { page: 1, results: 4, seed: "accountants-cards" },
