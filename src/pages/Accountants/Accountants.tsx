@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-import { AccountantsCards, AppLogo, Button, ErrorMessage, SkeletonAccountantCards, SpinnerComponent } from "../../components";
+import { AccountantsCards, Button, ErrorMessage, SkeletonAccountantCards, SpinnerComponent } from "../../components";
 import { STATUS } from "../../hooks/useGetUsers/interfaces";
 import { useGetAccountants } from "../../hooks";
 
@@ -21,7 +21,6 @@ export const Accountants = () => {
         <div className="accountants-page" ref={accountantsPageRef}>
             <div className="accountants-page-content">
                 {/* main content */}
-                <AppLogo />
                 <AccountantsCards accountants={accountantsData?.results} />
                 <SkeletonAccountantCards display={accountantsData.status === STATUS.LOADING} />
                 <Button
